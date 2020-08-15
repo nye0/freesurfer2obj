@@ -8,6 +8,7 @@
 - gawk
   - mac: ```brew install gawk```
   - ubuntu: ```sudo apt-get install gawk```
+  - check the path to gawk with ``` which gawk```, edit the first line of ```src/obj2srf``` and ```src/srf2obj```
 - matlab
   - add ```areal```  to matlab path
   - add ```$FREESURFER_HOME/matlab```  to matlab path
