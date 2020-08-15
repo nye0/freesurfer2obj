@@ -5,7 +5,16 @@ surf=$3
 label=$4
 resultroot=$5
 #pial_name=`basename $pial`
-matlab=/Applications/MATLAB_R2016b.app/bin//matlab
+matlab=`which matlab`
+Usage() {
+    echo ""
+    echo "Usage: $0 SUBJECT_ID SUBJECT_DIR SurferName(pial,inflate...) Label(BA1_exvivo,V1_exvivo...) resultroot"
+    echo ""
+    exit 1
+}
+
+[ "$1" = "" ] && Usage
+mkdir -p $resultroot
 
 for h in lh rh; do
 	mris_convert $SUBJ_DIR/$SUBJ/surf/${h}.${surf} $resultroot/${h}.${surf}.asc
